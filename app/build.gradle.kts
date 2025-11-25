@@ -7,6 +7,17 @@ plugins {
 android {
     namespace = "com.example.lab14"
     compileSdk = 36
+    buildFeatures {
+        compose=true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5"
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 
     defaultConfig {
         applicationId = "com.example.lab14"
@@ -40,6 +51,12 @@ android {
 }
 
 dependencies {
+    // For AppWidgets support
+    implementation ("androidx.glance:glance-appwidget:1.1.0")
+    // For interop APIs with Material 3
+    implementation ("androidx.glance:glance-material3:1.1.0")
+    // For interop APIs with Material 2
+    implementation ("androidx.glance:glance-material:1.1.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
